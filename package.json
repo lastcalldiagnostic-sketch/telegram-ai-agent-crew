@@ -7,7 +7,10 @@
   "scripts": {
     "dev": "node --watch api/webhook.js",
     "start": "node api/webhook.js",
-    "test": "node -e \"console.log('telegram-ai-agent-crew boot ok')\""
+    "test": "node -e \"console.log('telegram-ai-agent-crew boot ok')\"",
+    "docker:build": "docker build -t telegram-ai-agent-crew .",
+    "docker:up": "docker compose up --build -d",
+    "health": "node -e \"fetch('http://localhost:3000/health').then(r => r.ok ? process.exit(0) : process.exit(1)).catch(() => process.exit(1))\""
   },
   "engines": {
     "node": ">=18.0.0"
@@ -19,6 +22,7 @@
     "@langchain/langgraph": "^0.2.60",
     "@octokit/rest": "^21.0.2",
     "dotenv": "^16.4.1",
+    "express": "^4.21.2",
     "libsodium-wrappers": "^0.7.13",
     "tweetnacl": "^1.0.0",
     "zod": "^3.23.8"
