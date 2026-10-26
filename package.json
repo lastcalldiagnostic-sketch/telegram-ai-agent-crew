@@ -1,0 +1,26 @@
+{
+  "name": "telegram-ai-agent-crew",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Telegram-first multi-agent brain for mobile-only automation on Vercel serverless",
+  "main": "api/webhook.js",
+  "scripts": {
+    "dev": "node --watch api/webhook.js",
+    "start": "node api/webhook.js",
+    "test": "node -e \"console.log('telegram-ai-agent-crew boot ok')\""
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "@langchain/core": "^0.3.52",
+    "@langchain/google-genai": "^0.2.0",
+    "@langchain/groq": "^0.2.0",
+    "@langchain/langgraph": "^0.2.60",
+    "@octokit/rest": "^21.0.2",
+    "dotenv": "^16.4.1",
+    "libsodium-wrappers": "^0.7.13",
+    "tweetnacl": "^1.0.0",
+    "zod": "^3.23.8"
+  }
+}

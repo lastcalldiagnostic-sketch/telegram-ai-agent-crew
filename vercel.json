@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "functions": {
+    "api/webhook.js": {
+      "runtime": "nodejs18.x",
+      "maxDuration": 30
+    }
+  },
+  "routes": [
+    { "src": "/api/webhook", "dest": "/api/webhook.js" },
+    { "src": "/health", "dest": "/api/webhook.js" },
+    { "src": "/", "dest": "/api/webhook.js" }
+  ]
+}
